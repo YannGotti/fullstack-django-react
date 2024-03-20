@@ -3,11 +3,15 @@ from rest_framework.views import APIView
 from .models import Streamer
 from .serializer import StreamerSerializer
 from rest_framework.response import Response
+from .service import getStreamer
 
 class StreamersView(APIView):
     def get(self, request):
-        serializer = StreamerSerializer(Streamer.objects.all(), many=True)
-        return Response(serializer.data)
+        filter = request.GET.get('filter')
+        streamers = getStreamer(filter)
+        return Response(streamers)
+
+        
     
     def post(self,request):
         serializer = StreamerSerializer(data=request.data)

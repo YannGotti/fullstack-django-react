@@ -3,4 +3,4 @@ from .models import Streamer
 
 @admin.register(Streamer)
 class StreamerAdminPanel(admin.ModelAdmin):
-    list_display = ('name', 'fullname', 'age', 'description', 'video_preview')
+    list_display = ('name', 'fullname', 'age', 'description', 'video_preview', 'instagram_url', 'twitch_url', 'youtube_url')
