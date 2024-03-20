@@ -2,14 +2,40 @@
     height: 90vh;
 }
 
+.link-streamer{
+    text-decoration: none;
+    color: #ffffff;
+    transition: 0.5s;
+}
+
+.link-streamer:hover{
+    color: #bebebe;
+}
+
 
 .border{
     border: 6px solid black;
 }
 
+.info-panel{
+    background-color: #0c0e13;
+    border-radius: 10px;
+    height: 600px;
+}
+
+.wrapper{
+    background-color: #0c0e13;
+    border-radius: 10px;
+}
+
+.fab, .far {
+    font-weight: 400;
+    color: white;
+}
+
 .wrapper .icon{
     position: relative;
-    background-color: #ffffff;
+    background-color: #3b3b3b41;
     border-radius: 50%;
     margin: 10px;
     width: 50px;
