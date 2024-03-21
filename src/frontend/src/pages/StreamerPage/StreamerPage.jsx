@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 
 import fetchStreamers from "../../axios/requests";
 import Header from "../../components/Header";
+import Footer from "../../components/Footer";
 import "./StreamerPage.css";
 
 export default function StreamerPage() {
@@ -35,7 +36,7 @@ export default function StreamerPage() {
           </div>
           <div className="col-12 col-lg-4 text-start d-flex align-self-center">
             <div className="vstack gap-2">
-              <div className="hstack gap-1 wrapper p-1 mt-3 d-flex justify-content-center">
+              <div className="hstack gap-1 wrapper p-1 mt-3 d-flex justify-content-center shadow">
                 <a
                   href={streamer.instagram_url}
                   class="icon instagram"
@@ -70,7 +71,7 @@ export default function StreamerPage() {
                 </a>
               </div>
 
-              <div className="info-panel p-3">
+              <div className="info-panel p-3 shadow">
                 <a
                   href={streamer.twitch_url}
                   className="text-h2-custom m-2 link-streamer"

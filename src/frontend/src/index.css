@@ -1,5 +1,5 @@
 body {
-  background-color: #14161c;
+  background-color: #16161f;
   background-size: cover !important;
   background-repeat: no-repeat !important;
   background-position: center;
@@ -48,4 +48,9 @@ body::-webkit-scrollbar { width: 0 !important }
 {
   font-weight: 500;
   font-size: 9pt;
+}
+
+
+.link-footer-about{
+  text-decoration: none;
 }
