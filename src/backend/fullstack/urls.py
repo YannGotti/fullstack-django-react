@@ -7,7 +7,8 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/streamers/', StreamersView.as_view())
+    path('api/streamers/', StreamersView.as_view()),
+    path('api/getAttributesStreamer/', GetAttributesStreamer.as_view())
 ]
 
 if settings.DEBUG:

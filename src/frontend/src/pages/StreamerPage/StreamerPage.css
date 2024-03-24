@@ -23,6 +23,21 @@
     height: 600px;
 }
 
+.cloth-panel{
+  background-color: #0c0e13;
+  border-radius: 10px;
+  height: 600px;
+}
+
+.cloth-panel-activate{
+  background-color: #3b3b3b41;
+  border-radius: 10px;
+  height: 85%;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+
 .wrapper{
     background-color: #0c0e13;
     border-radius: 10px;

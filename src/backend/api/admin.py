@@ -1,6 +1,10 @@
 from django.contrib import admin
-from .models import Streamer
+from .models import Streamer, StreamerAttribute
 
 @admin.register(Streamer)
 class StreamerAdminPanel(admin.ModelAdmin):
-    list_display = ('name', 'fullname', 'age', 'description', 'video_preview', 'instagram_url', 'twitch_url', 'youtube_url')
+    list_display = ('name', 'is_active')
+
+@admin.register(StreamerAttribute)
+class StreamerAttributeAdminPanel(admin.ModelAdmin):
+    list_display = ('filter', 'streamer')

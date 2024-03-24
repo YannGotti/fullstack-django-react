@@ -7,8 +7,36 @@
     filter: blur(100%);
 }
 
+.video-attribute{
+    width: 200px;
+    border-radius: 10px;
+}
+
+.button-attribute{
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+}
 
 .panel-text{
     background-color: rgb(12, 14, 19);
     border-radius: 0px 0px 10px 10px;
+}
+
+
+.buttonAction{
+    padding: 10px;
+    background-color: #18191d;
+}
+
+.buttonFilter{
+    padding: 10px;
+    width: 40%;
+    background-color: #0c0e13;
+}
+
+
+.buttonGroupFilter{
+    padding: 10px;
+    background-color: #18191d;
+    border-radius: 10px;
 }

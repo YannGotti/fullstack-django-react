@@ -6,8 +6,10 @@ export default function HomePage() {
   return (
     <>
       <Header />
-      <Content />
-      <Footer />
+      <div className="container">
+        <Content />
+        <Footer />
+      </div>
     </>
   );
 }
