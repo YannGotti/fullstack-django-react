@@ -4,10 +4,11 @@ import { useVideoPreview } from "../../components/context/Contexts";
 import { fetchStreamers } from "../../axios/requests";
 
 import Header from "../../components/Header";
-import UrlsForStreamer from "../../components/streamer/UrlsForStreamer";
-import ButtonsActionStreamer from "../../components/streamer/ButtonsActionStreamer";
-import InfoPanel from "../../components/streamer/InfoPanel";
-import ClothPanel from "../../components/streamer/ClothPanel";
+import UrlsPanel from "../../components/streamer/Panels/UrlsPanel";
+import InfoPanel from "../../components/streamer/Panels/InfoPanel";
+import ClothPanel from "../../components/streamer/Panels/ClothPanel";
+
+import ButtonsActionStreamer from "../../components/streamer/Buttons/ButtonsActionStreamer";
 
 import "./StreamerPage.css";
 
@@ -54,7 +55,7 @@ export default function StreamerPage() {
               {action === "info" && <InfoPanel streamer={streamer} />}
               {action === "cloth" && <ClothPanel streamer={streamer} />}
 
-              <UrlsForStreamer streamer={streamer} />
+              <UrlsPanel streamer={streamer} />
             </div>
           </div>
         </div>

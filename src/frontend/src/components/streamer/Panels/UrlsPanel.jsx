@@ -1,4 +1,4 @@
-export default function UrlsForStreamer({ streamer }) {
+export default function UrlsPanel({ streamer }) {
   return (
     <div className="hstack gap-1 wrapper p-1 mt-3 d-flex justify-content-center shadow">
       <a

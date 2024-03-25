@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
-import { fetchAttributesStreamer } from "../../axios/requests";
-import StreamerAttributes from "./StreamerAttributes";
-import ButtonsFiltersAction from "./ButtonsFiltersAction";
-import "./streamer.css";
+import { fetchAttributesStreamer } from "../../../axios/requests";
+import StreamerAttributes from "../StreamerAttributes";
+import ButtonsFiltersAction from "../Buttons/ButtonsFiltersAction";
+import NotComponent from "../../notComponent/NotComponent";
+
+import "../streamer.css";
 
 function GetStreamerAttributes(streamerAttributes) {
   return streamerAttributes.map((streamer, index) => (
@@ -15,7 +17,7 @@ function GetStreamerAttributes(streamerAttributes) {
 
 export default function ClothPanel({ streamer }) {
   const [filter, setFilter] = useState("animations");
-  const [streamerAttributes, setStreamerAttributes] = useState();
+  const [streamerAttributes, setStreamerAttributes] = useState([]);
 
   useEffect(() => {
     async function fetchData() {
@@ -36,7 +38,11 @@ export default function ClothPanel({ streamer }) {
 
       <div className="p-1 mt-3 cloth-panel-activate">
         <div className="row d-flex justify-content-center m-3">
-          {streamerAttributes}
+          {streamerAttributes.length !== 0 ? (
+            streamerAttributes
+          ) : (
+            <NotComponent target="Визуализация отсутствует" />
+          )}
         </div>
       </div>
     </div>

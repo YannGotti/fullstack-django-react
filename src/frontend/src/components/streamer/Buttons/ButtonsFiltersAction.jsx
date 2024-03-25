@@ -1,4 +1,4 @@
-import "./streamer.css";
+import "../streamer.css";
 
 export default function ButtonsFiltersAction({ onClick }) {
   return (
