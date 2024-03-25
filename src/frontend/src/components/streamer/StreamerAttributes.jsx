@@ -1,8 +1,16 @@
+import { useVideoPreview } from "../context/Contexts";
+
 import "./streamer.css";
 
-export default function StreamerAttributes({ video_attribute, onClick }) {
+export default function StreamerAttributes({ video_attribute }) {
+  const { setVideoPreview } = useVideoPreview();
+
+  function onClick(videoPreview) {
+    setVideoPreview(videoPreview);
+  }
+
   return (
-    <div className="col-12 col-lg-6">
+    <div className="col-12 col-md-12 col-lg-6">
       <button
         className="button-attribute"
         onClick={() => onClick(video_attribute)}

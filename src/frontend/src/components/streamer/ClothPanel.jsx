@@ -1,46 +1,26 @@
 import { useEffect, useState } from "react";
 import { fetchAttributesStreamer } from "../../axios/requests";
 import StreamerAttributes from "./StreamerAttributes";
+import ButtonsFiltersAction from "./ButtonsFiltersAction";
 import "./streamer.css";
 
-function ButtonsFiltersAction({ onClick }) {
-  return (
-    <div className="buttonGroupFilter hstack gap-5 d-flex justify-content-center">
-      <button
-        className="btn btn-otline-dark text-h5-custom text-light buttonFilter"
-        onClick={() => onClick("animations")}
-      >
-        Анимация
-      </button>
-
-      <button
-        className="btn btn-otline-dark text-h5-custom text-light buttonFilter"
-        onClick={() => onClick("cloth")}
-      >
-        Одежда
-      </button>
-    </div>
-  );
-}
-
-function GetStreamerAttributes(streamerAttributes, onClick) {
+function GetStreamerAttributes(streamerAttributes) {
   return streamerAttributes.map((streamer, index) => (
     <StreamerAttributes
       key={index}
       video_attribute={streamer.video_attribute}
-      onClick={onClick}
     />
   ));
 }
 
-export default function ClothPanel({ streamer, switchVideoPrewiew }) {
+export default function ClothPanel({ streamer }) {
   const [filter, setFilter] = useState("animations");
   const [streamerAttributes, setStreamerAttributes] = useState();
 
   useEffect(() => {
     async function fetchData() {
       const data = await fetchAttributesStreamer(streamer.name, filter);
-      setStreamerAttributes(GetStreamerAttributes(data, switchVideoPrewiew));
+      setStreamerAttributes(GetStreamerAttributes(data));
     }
 
     fetchData();

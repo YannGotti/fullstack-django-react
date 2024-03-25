@@ -1,18 +1,22 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { useVideoPreview } from "../../components/context/Contexts";
 import { fetchStreamers } from "../../axios/requests";
+
 import Header from "../../components/Header";
 import UrlsForStreamer from "../../components/streamer/UrlsForStreamer";
 import ButtonsActionStreamer from "../../components/streamer/ButtonsActionStreamer";
 import InfoPanel from "../../components/streamer/InfoPanel";
 import ClothPanel from "../../components/streamer/ClothPanel";
+
 import "./StreamerPage.css";
 
 export default function StreamerPage() {
   const params = useParams();
   const [streamer, setStreamer] = useState([]);
   const [action, setAction] = useState("info");
-  const [videoPreview, setVideoPreview] = useState(null);
+
+  const { videoPreview, setVideoPreview } = useVideoPreview(null);
 
   useEffect(() => {
     async function fetchData() {
@@ -26,10 +30,6 @@ export default function StreamerPage() {
 
   function switchActionPanel(action) {
     setAction(action);
-  }
-
-  function switchVideoPrewiew(videoPreview) {
-    setVideoPreview(videoPreview);
   }
 
   return (
@@ -52,12 +52,7 @@ export default function StreamerPage() {
               <ButtonsActionStreamer onClick={switchActionPanel} />
 
               {action === "info" && <InfoPanel streamer={streamer} />}
-              {action === "cloth" && (
-                <ClothPanel
-                  streamer={streamer}
-                  switchVideoPrewiew={switchVideoPrewiew}
-                />
-              )}
+              {action === "cloth" && <ClothPanel streamer={streamer} />}
 
               <UrlsForStreamer streamer={streamer} />
             </div>

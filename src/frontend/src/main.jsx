@@ -4,7 +4,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import HomePage from "./pages/HomePage.jsx";
 import StreamerPage from "./pages/StreamerPage/StreamerPage.jsx";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage.jsx";
-
+import { SwitchVideoPrewiew } from "./components/context/Contexts.jsx";
 import "./index.css";
 
 const router = createBrowserRouter([
@@ -15,8 +15,12 @@ const router = createBrowserRouter([
   },
   {
     path: "/streamer/:streamer",
-    element: <StreamerPage />,
-    errorElement: <StreamerPage />,
+    element: (
+      <SwitchVideoPrewiew>
+        <StreamerPage />
+      </SwitchVideoPrewiew>
+    ),
+    errorElement: <NotFoundPage />,
   },
 ]);
 
