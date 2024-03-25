@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { fetchAttributesStreamer } from "../../../axios/requests";
-import StreamerAttributes from "../StreamerAttributes";
+import StreamerAttributes from "../attributes/StreamerAttributes";
 import ButtonsFiltersAction from "../Buttons/ButtonsFiltersAction";
 import NotComponent from "../../notComponent/NotComponent";
 
@@ -37,7 +37,7 @@ export default function ClothPanel({ streamer }) {
       <ButtonsFiltersAction onClick={switchFilterAction} />
 
       <div className="p-1 mt-3 cloth-panel-activate">
-        <div className="row d-flex justify-content-center m-3">
+        <div className="row d-flex justify-content-start m-3">
           {streamerAttributes.length !== 0 ? (
             streamerAttributes
           ) : (

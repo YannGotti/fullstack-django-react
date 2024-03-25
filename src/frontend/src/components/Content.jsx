@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Streamer from "./streamer/Streamer";
+import Streamer from "./streamer/attributes/Streamer";
 import NotComponent from "./notComponent/NotComponent";
 import { fetchStreamers } from "../axios/requests";
 

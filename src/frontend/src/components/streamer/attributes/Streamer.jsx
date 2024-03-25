@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import "./streamer.css";
+import "../streamer.css";
 
 export default function Streamer({ name, video_preview }) {
   return (
